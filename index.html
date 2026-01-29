@@ -2,87 +2,177 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Zaidi Arfi | Data Analyst junior</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaidi Arfi | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root{
-            --text:#111;
-            --muted:#555;
-            --border:#e6e6e6;
-            --bg:#fafafa;
-            --card:#ffffff;
-            --accent:#0b5fff;
+        :root {
+            --primary: #0062ff;
+            --primary-light: #e6f0ff;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
-        body{
-            margin:0;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            color:var(--text);
-            background:var(--bg);
-            line-height:1.6;
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: var(--bg);
+            line-height: 1.6;
         }
 
-        header{
-            background:var(--card);
-            border-bottom:1px solid var(--border);
+        /* Header avec un léger dégradé */
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 60px 20px;
+            text-align: center;
         }
 
-        .header-inner{
-            max-width:920px;
-            margin:0 auto;
-            padding:28px 20px;
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        h1{margin:0;font-size:34px;}
-        h2{margin:6px 0 0;font-size:18px;font-weight:600;color:var(--muted);}
-        .stack{margin-top:10px;color:var(--muted);}
-
-        .container{
-            max-width:920px;
-            margin:0 auto;
-            padding:32px 20px 60px;
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #0062ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        section{margin-top:30px;}
-        h3{margin-bottom:16px;}
-
-        .cards{
-            display:grid;
-            grid-template-columns:1fr;
-            gap:16px;
+        h2 {
+            margin: 10px 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-muted);
         }
 
-        article{
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:12px;
-            padding:16px 18px;
+        .stack {
+            margin-top: 20px;
         }
 
-        article h4{margin:0 0 8px;font-size:18px;}
-        ul{margin:6px 0 6px 18px;}
-        .meta{margin-top:8px;color:var(--muted);font-style:italic;}
-
-        a{
-            color:var(--accent);
-            text-decoration:none;
+        .tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0 4px;
         }
 
-        a:hover{text-decoration:underline;}
-
-        .btn{
-            display:inline-block;
-            margin-top:10px;
-            padding:8px 14px;
-            border-radius:10px;
-            border:1px solid var(--border);
-            background:#fff;
-            font-weight:600;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        @media(min-width:780px){
-            .cards{grid-template-columns:1fr 1fr;}
-            article:nth-child(3){grid-column:1 / -1;}
+        section { margin-bottom: 50px; }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::after {
+            content: "";
+            height: 2px;
+            flex: 1;
+            background: var(--border);
+            margin-left: 20px;
+        }
+
+        /* Grille de projets */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        article {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        article h4 {
+            margin: 0 0 12px;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        article ul {
+            margin: 0 0 20px 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Boutons stylisés */
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #004ecc;
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-light);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -92,8 +182,13 @@
 <header>
     <div class="header-inner">
         <h1>Zaidi Arfi</h1>
-        <h2>Data Analyst junior</h2>
-        <p class="stack">Python · SQL · Power BI</p>
+        <h2>Data Analyst Junior</h2>
+        <div class="stack">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Statistiques</span>
+        </div>
     </div>
 </header>
 
@@ -101,69 +196,58 @@
 
 <section>
     <h3>À propos</h3>
-    <p>
-        Data Analyst junior en reconversion, formé à l’analyse et à la visualisation de données
-        avec Python, SQL et Power BI. Je réalise des projets concrets allant de la préparation des données
-        à la création de KPI, visualisations et recommandations destinées à l’aide à la décision.
+    <p style="max-width: 700px; color: var(--text-muted); font-size: 1.1rem;">
+        Passionné par l'exploitation des données, je transforme des datasets complexes en 
+        <strong>tableaux de bord actionnables</strong>. Mon objectif : éclairer la prise de décision 
+        via une analyse rigoureuse et une visualisation claire.
     </p>
 </section>
 
 <section>
-    <h3>Projets</h3>
+    <h3>Projets Phares</h3>
 
     <div class="cards">
-
         <article>
+            <p class="meta">Python • Pandas • Matplotlib</p>
             <h4>Analyse des ventes d’une librairie</h4>
             <ul>
-                <li>Nettoyage et exploration des données (EDA)</li>
-                <li>KPI : chiffre d’affaires, top produits, clients BtoB</li>
-                <li>Recommandations business</li>
+                <li>Nettoyage complet de données (EDA)</li>
+                <li>Analyse du chiffre d’affaires et top produits</li>
+                <li>Segmentation client BtoB / BtoC</li>
             </ul>
-            <p class="meta">Python, Pandas, Matplotlib</p>
-            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/librairie" target="_blank" rel="noopener">
-                Voir le projet
-            </a>
+            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/librairie" target="_blank">Voir le projet</a>
         </article>
 
         <article>
+            <p class="meta">Machine Learning • Scikit-learn</p>
             <h4>Étude de marché – Produit bio</h4>
             <ul>
-                <li>Structuration PESTEL</li>
-                <li>ACP et clustering (K-means)</li>
-                <li>Recommandation de pays cibles</li>
+                <li>Analyse PESTEL et ACP</li>
+                <li>Clustering K-means pour segmentation pays</li>
+                <li>Recommandations stratégiques à l'export</li>
             </ul>
-            <p class="meta">Python, Pandas, Scikit-learn</p>
-            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/etude_marche_bio" target="_blank" rel="noopener">
-                Voir le projet
-            </a>
+            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/etude_marche_bio" target="_blank">Voir le projet</a>
         </article>
 
         <article>
-            <h4>Étude – Accès à l’eau potable</h4>
+            <p class="meta">Data Viz • Power BI • Python</p>
+            <h4>Accès à l’eau potable</h4>
             <ul>
-                <li>Analyse d’indicateurs socio-économiques</li>
-                <li>Comparaison pays / régions</li>
-                <li>Visualisations et synthèse décisionnelle</li>
+                <li>Indicateurs socio-économiques mondiaux</li>
+                <li>Comparaison régionale dynamique</li>
+                <li>Storytelling visuel impactant</li>
             </ul>
-            <p class="meta">Python, Power BI</p>
-            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/eau_potable" target="_blank" rel="noopener">
-                Voir le projet
-            </a>
+            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/eau_potable" target="_blank">Voir le projet</a>
         </article>
-
     </div>
 </section>
 
-<section>
-    <h3>Contact</h3>
-    <ul>
-        <li>
-            <a class="btn" href="https://zaidi831.github.io/Zaidi_ARFI_CV.pdf" target="_blank" rel="noopener">
-                Télécharger mon CV
-            </a>
-        </li>
-    </ul>
+<section style="text-align: center;">
+    <h3>Contact & CV</h3>
+    <p>Besoin d'un analyste pour vos projets Data ?</p>
+    <a class="btn btn-outline" href="https://zaidi831.github.io/Zaidi_ARFI_CV.pdf" target="_blank">
+        📥 Télécharger mon CV (PDF)
+    </a>
 </section>
 
 </div>
