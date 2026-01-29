@@ -3,91 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <title>Zaidi Arfi | Data Analyst junior</title>
-    <style>
-        body {
-        font-family: Arial, sans-serif;
-        margin: 40px;
-        line-height: 1.6;
-        max-width: 900px;
-    }
-    header {
-        margin-bottom: 30px;
-    }
-    h1 { margin: 0; }
-    h2 { margin: 6px 0 0 0; font-weight: normal; }
-    section { margin-bottom: 30px; }
-    a { color: #0056b3; text-decoration: none; }
-    a:hover { text-decoration: underline; }
 
-    article {
-        border-left: 4px solid #0056b3;
-        padding-left: 15px;
-        margin: 18px 0 22px 0;
-    }
-    ul { margin: 8px 0 8px 18px; }
-    .meta { color: #444; font-style: italic; margin-top: 6px; }
+    <style>
+        :root{
+            --text:#111;
+            --muted:#555;
+            --border:#e6e6e6;
+            --bg:#fafafa;
+            --card:#ffffff;
+            --accent:#0b5fff;
+        }
+
+        body{
+            margin:0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color:var(--text);
+            background:var(--bg);
+            line-height:1.6;
+        }
+
+        header{
+            background:var(--card);
+            border-bottom:1px solid var(--border);
+        }
+
+        .header-inner{
+            max-width:920px;
+            margin:0 auto;
+            padding:28px 20px;
+        }
+
+        h1{margin:0;font-size:34px;}
+        h2{margin:6px 0 0;font-size:18px;font-weight:600;color:var(--muted);}
+        .stack{margin-top:10px;color:var(--muted);}
+
+        .container{
+            max-width:920px;
+            margin:0 auto;
+            padding:32px 20px 60px;
+        }
+
+        section{margin-top:30px;}
+        h3{margin-bottom:16px;}
+
+        .cards{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:16px;
+        }
+
+        article{
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:16px 18px;
+        }
+
+        article h4{margin:0 0 8px;font-size:18px;}
+        ul{margin:6px 0 6px 18px;}
+        .meta{margin-top:8px;color:var(--muted);font-style:italic;}
+
+        a{
+            color:var(--accent);
+            text-decoration:none;
+        }
+
+        a:hover{text-decoration:underline;}
+
+        .btn{
+            display:inline-block;
+            margin-top:10px;
+            padding:8px 14px;
+            border-radius:10px;
+            border:1px solid var(--border);
+            background:#fff;
+            font-weight:600;
+        }
+
+        @media(min-width:780px){
+            .cards{grid-template-columns:1fr 1fr;}
+            article:nth-child(3){grid-column:1 / -1;}
+        }
     </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Zaidi Arfi</h1>
-    <h2>Data Analyst junior</h2>
-    <p>Python · SQL · Power BI</p>
+    <div class="header-inner">
+        <h1>Zaidi Arfi</h1>
+        <h2>Data Analyst junior</h2>
+        <p class="stack">Python · SQL · Power BI</p>
+    </div>
 </header>
+
+<div class="container">
 
 <section>
     <h3>À propos</h3>
     <p>
         Data Analyst junior en reconversion, formé à l’analyse et à la visualisation de données
-    avec Python, SQL et Power BI. Je réalise des projets concrets allant de la préparation des données
-    à la création de KPI, visualisations et recommandations destinées à l’aide à la décision.
+        avec Python, SQL et Power BI. Je réalise des projets concrets allant de la préparation des données
+        à la création de KPI, visualisations et recommandations destinées à l’aide à la décision.
     </p>
 </section>
 
 <section>
     <h3>Projets</h3>
 
-    <article>
-        <h4>Analyse des ventes d’une librairie</h4>
-        <p>Analyse exploratoire, KPI, visualisations et recommandations business.</p>
-        <p><em>Python, Pandas, Matplotlib</em></p>
-      <a href="https://github.com/Zaidi831/Livrables/tree/main/projets/librairie" target="_blank">
-  Voir le projet
-</a>
+    <div class="cards">
 
-    </article>
+        <article>
+            <h4>Analyse des ventes d’une librairie</h4>
+            <ul>
+                <li>Nettoyage et exploration des données (EDA)</li>
+                <li>KPI : chiffre d’affaires, top produits, clients BtoB</li>
+                <li>Recommandations business</li>
+            </ul>
+            <p class="meta">Python, Pandas, Matplotlib</p>
+            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/librairie" target="_blank" rel="noopener">
+                Voir le projet
+            </a>
+        </article>
 
-    <article>
-        <h4>Étude de marché – Produit bio</h4>
-        <p>ACP et clustering (K-means) pour identifier des pays cibles.</p>
-        <p><em>FAO, Banque mondiale, Python</em></p>
-       <a href="https://github.com/Zaidi831/Livrables/tree/main/projets/etude_marche_bio" target="_blank">
-  Voir le projet
-</a>
+        <article>
+            <h4>Étude de marché – Produit bio</h4>
+            <ul>
+                <li>Structuration PESTEL</li>
+                <li>ACP et clustering (K-means)</li>
+                <li>Recommandation de pays cibles</li>
+            </ul>
+            <p class="meta">Python, Pandas, Scikit-learn</p>
+            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/etude_marche_bio" target="_blank" rel="noopener">
+                Voir le projet
+            </a>
+        </article>
 
-    </article>
+        <article>
+            <h4>Étude – Accès à l’eau potable</h4>
+            <ul>
+                <li>Analyse d’indicateurs socio-économiques</li>
+                <li>Comparaison pays / régions</li>
+                <li>Visualisations et synthèse décisionnelle</li>
+            </ul>
+            <p class="meta">Python, Power BI</p>
+            <a class="btn" href="https://github.com/Zaidi831/Livrables/tree/main/projets/eau_potable" target="_blank" rel="noopener">
+                Voir le projet
+            </a>
+        </article>
 
-    <article>
-        <h4>Dashboard Power BI</h4>
-        <p>Tableau de bord interactif pour le pilotage de la performance.</p>
-        <p><em>Power BI</em></p>
-       <a href="https://github.com/Zaidi831/Livrables/tree/main/projets/eau_potable" target="_blank">
-  Voir le projet
-</a>
-
-    </article>
+    </div>
 </section>
 
 <section>
     <h3>Contact</h3>
     <ul>
         <li>
-            <a href="https://zaidi831.github.io/Zaidi_ARFI_CV.pdf" target="_blank" rel="noopener">
+            <a class="btn" href="https://zaidi831.github.io/Zaidi_ARFI_CV.pdf" target="_blank" rel="noopener">
                 Télécharger mon CV
             </a>
         </li>
     </ul>
 </section>
+
+</div>
+
+</body>
+</html>
+
 
 
